@@ -1,0 +1,12 @@
+---
+- name: check for s3 creds
+  local_action: stat path={{ s3_creds_path }}
+  register: p
+  sudo: no
+
+- name: including vars
+  include_vars: "{{ s3_creds_path }}"
+  when: p.stat.exists is defined and p.stat.exists == true
+
+- name: configure /tmp/s3cfg-ansible
+  template: src=s3cfg.j2 dest=/tmp/s3cfg-ansible
