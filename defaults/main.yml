@@ -1,10 +1,11 @@
 ---
 # defaults file for ansible-s3client
+benchmark_suite_set: test
 s3_creds_path: /tmp/riakcs_creds.yml
+s3client_host_base: s3.amazonaws.com
+s3client_proxy_port: 8080
+s3cmd_admin_key: foo
+s3cmd_admin_secret: bar
 s3cmd_config: /tmp/s3cfg-ansible
 s3cmd_proxy_host: 127.0.0.1
 s3cmd_proxy_port: 8080
-s3cmd_admin_key: foo
-s3cmd_admin_secret: bar
-s3client_host_base: s3.amazonaws.com
-s3client_proxy_port: 8080
